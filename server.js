@@ -62,6 +62,39 @@ function coinFlip() {
     return "heads"
   }
 
+function flipACoin(call) {
+    const flip = coinFlip()
+    if(flip == call){
+      results = "win"
+    }
+    else{
+      results = "lose"
+    }
+    return  { call: call, flip: flip, result: results}
+  }
+  app.use(function(req, res){
+    res.status(404).send('404 NOT FOUND')
+});
+
+function coinFlips(flips) {
+    let array = [];
+    for(let i = 0; i < flips; i++){
+    array[i] = coinFlip();
+    }
+    return array;
+  }
+
+function countFlips(array) {
+    let count = 0;
+    for(let i = 0; i < array.length; i++){
+      if(array[i] == "Heads"){
+        count = count + 1;
+      }
+  
+    return {tails: array.length - counter, heads: counter}};
+  
+  }
+
 // Default response for any other request
 app.use(function(req, res){
     res.status(404).send('404 NOT FOUND')
