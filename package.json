@@ -11,13 +11,14 @@
     "url": "git+https://github.com/comp426-2022-spring/a03-acpaulsen.git"
   },
   "author": "Amelia Paulsen",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/comp426-2022-spring/a03-acpaulsen/issues"
   },
   "homepage": "https://github.com/comp426-2022-spring/a03-acpaulsen#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "minimist": "^1.2.6"
+    "minimist": "^1.2.6",
+    "browser-sync": "^2.27.9"
   }
 }
