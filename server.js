@@ -9,11 +9,6 @@ const server = app.listen(HTTP_PORT, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',HTTP_PORT))
 });
 
-// Default response for any other request
-app.use(function(req, res){
-    res.status(404).send('404 NOT FOUND')
-});
-
 app.get('/app/', (req, res) => {
     // Respond with status 200
         res.statusCode = 200;
@@ -23,4 +18,7 @@ app.get('/app/', (req, res) => {
         res.end(res.statusCode+ ' ' +res.statusMessage)
 });
 
-
+// Default response for any other request
+app.use(function(req, res){
+    res.status(404).send('404 NOT FOUND')
+});
