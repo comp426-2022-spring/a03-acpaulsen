@@ -18,10 +18,30 @@ app.get('/app/', (req, res) => {
         res.end(res.statusCode+ ' ' +res.statusMessage)
 });
 
-//normal flip
+//standard flip
 app.get('/app/flip/', (req, res) => {
     res.status(200).json({"flip" : coinFlip()})
 });
+
+//guess flip
+app.get('/app/flip/call/tails', (req, res) => {
+    const ter = flipACoin("tails")
+    res.status(200).json(ter)
+});
+
+//heads version
+app.get('/app/flip/call/heads', (req, res) => {
+    const val = flipACoin("heads")
+    res.status(200).json(val)
+});
+
+//number of flips
+app.get('/app/flips/:number', (req, res) => {
+    const array = coinFlips(req.params.number)
+    res.status(200).json({ 'raw' : array, 'summary' : countFlips(array) })
+    });
+
+//FUNCTIONS 
 
 /** Simple coin flip
  * 
