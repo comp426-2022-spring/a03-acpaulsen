@@ -94,11 +94,12 @@ function flipACoin(call) {
       ]
    */ 
 
+function coinFlips(flips) {
   let flipList = []; 
   let i = 0; 
-  for (let i=0; i < flips; i++) {
-    flipList.push(coinFlip());
-  }
+    for (let i=0; i < flips; i++) {
+      flipList.push(coinFlip());
+    }
   return flipList;
   }
 
