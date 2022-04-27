@@ -75,13 +75,31 @@ function flipACoin(call) {
   app.use(function(req, res){
     res.status(404).send('404 NOT FOUND')
 });
+  /** Multiple coin flips
+   * 
+   * Write a function that accepts one parameter (number of flips) and returns an array of 
+   * resulting "heads" or "tails".
+   * 
+   * @param {number} flips 
+   * @returns {string[]} results
+   * 
+   * example: coinFlips(10)
+   * returns:
+   *  [
+        'heads', 'heads',
+        'heads', 'tails',
+        'heads', 'tails',
+        'tails', 'heads',
+        'tails', 'heads'
+      ]
+   */ 
 
-function coinFlips(flips) {
-    let array = [];
-    for(let i = 0; i < flips; i++){
-    array[i] = coinFlip();
-    }
-    return array;
+  let flipList = []; 
+  let i = 0; 
+  for (let i=0; i < flips; i++) {
+    flipList.push(coinFlip());
+  }
+  return flipList;
   }
 
 function countFlips(array) {
@@ -89,7 +107,7 @@ function countFlips(array) {
     for(let i = 0; i < array.length; i++){
       if(array[i] == "Heads"){
         count = count + 1;
-      }
+    }
   
     return {tails: array.length - counter, heads: counter}};
   
